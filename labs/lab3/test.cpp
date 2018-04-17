@@ -24,22 +24,36 @@ int main() {
 
     cout << D->evaluate() << endl;
 
-   // vectorContainer* container = new vectorContainer();
-   // ListContainer* container = new ListContainer();
-   // container->add_element(A);
-   // container->add_element(B);
-   // container->add_element(D);
-   // cout << "Container Before Sort: " << endl;
-   // container->print();
-   // container->set_sort_function(new BubbleSort());
-   // container->sort();	
-   // cout << "Container After Sort: " << endl;
-   // container->print(); 
+   vectorContainer* container1 = new vectorContainer();
+   ListContainer* container2 = new ListContainer();
+
+   container1->add_element(A);
+   container1->add_element(B);
+   container1->add_element(D);
+
+   container2->add_element(A);
+   container2->add_element(B);
+   container2->add_element(D);
+
+   cout << "Vector container Before Sort: " << endl;
+   container1->print();
+   container1->set_sort_function(new BubbleSort());
+   container1->sort();	
+   cout << "Vector container After Sort: " << endl;
+   container1->print(); 
+
+   cout << "List container Before Sort: " << endl;
+   container2->print();
+   container2->set_sort_function(new SelectionSort());
+   container2->sort(); 
+   cout << "List container After Sort: " << endl;
+   container2->print();
+
    Floor* f = new Floor(A);
    cout << f->evaluate()<<endl;
    Ceil* ce = new Ceil(A);
    cout << ce->evaluate()<<endl;
-   Abs* ab = new Abs(B);
+   Abs* ab = new Abs(f);
    cout << ab->evaluate()<<endl;
   
 };
